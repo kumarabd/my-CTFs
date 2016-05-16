@@ -1,0 +1,11 @@
+BBY'S FIRST ELF
+
+  This is a basic Buffer overflow problem. The first step checking the file type, we get a 32-bit, non-stripped Binary file.
+  
+  We first debug the binary using GDB debugger. When overflowed look for EBP and ESP to determine the stack size.
+  
+  We then checked for raw symbols of this object file. It is found a function "print_flag" with a memory address 0x0804856d.
+
+  Thus the vulnerability is found and is exploited by over flowing (input more than the stack size) it to the address of "print_flag" function. 
+  
+  Note: The payload passed should be in little-endian format for this 32-bit system.
