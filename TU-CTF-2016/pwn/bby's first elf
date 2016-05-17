@@ -1,5 +1,7 @@
 **BBY'S FIRST ELF**
 
+*category*:pwn  *points*:25
+
 This is a basic Buffer overflow problem. The first step checking the file type, we get a 32-bit, non-stripped Binary file.
 
 ```bash
