@@ -58,7 +58,7 @@ gdb-peda$ set $eip=0x0804849b
 gdb-peda$ c
 Continuing.
 Printing flag
-i_has_debugger_skill
+***i_has_debugger_skill***
 
 Program received signal SIGSEGV, Segmentation fault.
 [----------------------------------registers-----------------------------------]
