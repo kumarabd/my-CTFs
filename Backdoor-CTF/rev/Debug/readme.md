@@ -1,4 +1,4 @@
-***DEBUG***
+***DEBUG32***
 
 *category:reverse engineering*  *points:70*
 
